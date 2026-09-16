@@ -51,10 +51,11 @@ export default function HeroCarousel() {
                 height={slide.height}
                 fetchPriority={i === 0 ? 'high' : 'auto'}
               />
-              {/* Percentage coordinates cover only the button printed in each original image. */}
-              <Link to="/products" className="hero-explore">
-                Explore All <FiArrowRight />
-              </Link>
+              <Link
+                to="/products"
+                className="hero-explore"
+                aria-label="Explore All"
+              />
             </div>
           ))}
         </div>
