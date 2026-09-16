@@ -31,7 +31,10 @@ export default function HeroCarousel() {
         }}
       >
         <h1 className="visually-hidden">Abhusan — Timeless Indian Jewellery</h1>
-        <div className="hero-stage">
+        <div
+          className="hero-stage"
+          style={{ aspectRatio: `${slides[active].width} / ${slides[active].height}` }}
+        >
           {slides.map((slide, i) => (
             <div
               key={slide.image}

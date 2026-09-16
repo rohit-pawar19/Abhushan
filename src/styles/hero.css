@@ -157,6 +157,14 @@
 .story-copy .little-line {
   margin-bottom: 20px;
 }
+@media (max-width: 800px) {
+  .hero-stage {
+    height: auto;
+  }
+  .hero-slide > img {
+    object-fit: contain;
+  }
+}
 @media (max-width: 600px) {
   .hero-explore {
     font-size: clamp(7px, 1.7vw, 10px);
