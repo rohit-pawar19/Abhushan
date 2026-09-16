@@ -164,7 +164,7 @@ describe('Catalogue and navigation', () => {
 })
 
 describe('Carousel', () => {
-  it('autoplays, pauses on interaction, and supports explicit pause and resume', () => {
+  it('autoplays while hovered or focused, and supports explicit pause and resume', () => {
     vi.useFakeTimers()
     open()
     const current = () => screen.getByRole('button', { name: 'Go to slide 1' })
@@ -175,21 +175,22 @@ describe('Carousel', () => {
       'true',
     )
     fireEvent.mouseEnter(screen.getByRole('region', { name: 'Featured jewellery' }))
-    act(() => vi.advanceTimersByTime(13000))
-    expect(screen.getByRole('button', { name: 'Go to slide 2' })).toHaveAttribute(
+    fireEvent.focus(screen.getByRole('button', { name: 'Next slide' }))
+    act(() => vi.advanceTimersByTime(6500))
+    expect(screen.getByRole('button', { name: 'Go to slide 3' })).toHaveAttribute(
       'aria-current',
       'true',
     )
     fireEvent.mouseLeave(screen.getByRole('region', { name: 'Featured jewellery' }))
     fireEvent.click(screen.getByRole('button', { name: 'Pause slideshow' }))
     act(() => vi.advanceTimersByTime(6500))
-    expect(screen.getByRole('button', { name: 'Go to slide 2' })).toHaveAttribute(
+    expect(screen.getByRole('button', { name: 'Go to slide 3' })).toHaveAttribute(
       'aria-current',
       'true',
     )
     fireEvent.click(screen.getByRole('button', { name: 'Play slideshow' }))
     act(() => vi.advanceTimersByTime(6500))
-    expect(screen.getByRole('button', { name: 'Go to slide 3' })).toHaveAttribute(
+    expect(screen.getByRole('button', { name: 'Go to slide 1' })).toHaveAttribute(
       'aria-current',
       'true',
     )

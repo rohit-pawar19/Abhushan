@@ -8,33 +8,18 @@ export default function HeroCarousel() {
   const [paused, setPaused] = useState(
     () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
   )
-  const [hovering, setHovering] = useState(false)
-  const [focused, setFocused] = useState(false)
   useEffect(() => {
-    if (paused || hovering || focused) return
+    if (paused) return
     const timer = setInterval(() => setActive((i) => (i + 1) % slides.length), 6500)
     return () => clearInterval(timer)
-  }, [paused, hovering, focused])
+  }, [paused])
   const change = (delta) => setActive((i) => (i + delta + slides.length) % slides.length)
 
   return (
     <div className="campaign-section">
-      <section
-        className="hero"
-        aria-label="Featured jewellery"
-        aria-roledescription="carousel"
-        onMouseEnter={() => setHovering(true)}
-        onMouseLeave={() => setHovering(false)}
-        onFocusCapture={() => setFocused(true)}
-        onBlurCapture={(e) => {
-          if (!e.currentTarget.contains(e.relatedTarget)) setFocused(false)
-        }}
-      >
+      <section className="hero" aria-label="Featured jewellery" aria-roledescription="carousel">
         <h1 className="visually-hidden">Abhusan — Timeless Indian Jewellery</h1>
-        <div
-          className="hero-stage"
-          style={{ aspectRatio: `${slides[active].width} / ${slides[active].height}` }}
-        >
+        <div className="hero-stage">
           {slides.map((slide, i) => (
             <div
               key={slide.image}
