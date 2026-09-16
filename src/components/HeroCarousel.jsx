@@ -55,7 +55,14 @@ export default function HeroCarousel() {
                 to="/products"
                 className="hero-explore"
                 aria-label="Explore All"
-              />
+              >
+                {i !== 1 && (
+                  <>
+                    <span>{i === 2 ? 'Explore Rings' : 'Explore Collection'}</span>
+                    <FiArrowRight aria-hidden="true" />
+                  </>
+                )}
+              </Link>
             </div>
           ))}
         </div>
