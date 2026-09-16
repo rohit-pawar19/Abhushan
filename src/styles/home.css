@@ -1,0 +1,333 @@
+﻿/* Shared navigation, home page and editorial layouts */
+.brand-thought {
+  padding: 29px 20px 31px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  background: #f4f2e9;
+}
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--accent);
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1;
+}
+.ornament span {
+  width: 34px;
+  height: 1px;
+  background: var(--green);
+}
+.brand-thought > p {
+  font-family: var(--serif);
+  font-size: 23px;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+.brand-thought > p em {
+  color: var(--green);
+}
+.brand-thought > .eyebrow {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--green);
+}
+.collections-section .section-title {
+  text-align: center;
+  justify-content: center;
+}
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px 24px;
+}
+.collection-card {
+  padding: 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  min-width: 0;
+  transition: transform 0.4s;
+}
+.collection-image {
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  background: #eee8dc;
+  border-radius: 3px;
+}
+.collection-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center 47%;
+  transition: transform 0.7s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+.collection-card:hover {
+  transform: translateY(-4px);
+}
+.collection-card:hover .collection-image {
+  box-shadow: 0 12px 28px #00236640;
+}
+.collection-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  color: var(--blue);
+}
+.collection-caption h3 {
+  font-size: 26px;
+  margin: 0;
+}
+.collection-caption > svg {
+  font-size: 17px;
+  color: var(--accent);
+}
+.collection-card > p {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+.curated-section {
+  background: #f1f2ec;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.story-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding-block: 78px;
+}
+.story-image {
+  aspect-ratio: auto;
+  overflow: hidden;
+  border-radius: 2px;
+  background: transparent;
+}
+.story-image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  transform: none;
+}
+.story-copy {
+  max-width: 430px;
+}
+.story-copy h2 {
+  font-size: 43px;
+  line-height: 1.12;
+  color: var(--blue);
+  margin-top: 17px;
+  margin-bottom: 22px;
+}
+.story-copy h2 em {
+  font-weight: 400;
+  color: var(--blue);
+}
+.story-copy > p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.story-copy .text-link {
+  margin-top: 7px;
+}
+.values-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  padding: 29px 0 35px;
+  text-align: center;
+}
+.values-strip > div + div {
+  border-left: 1px solid var(--line);
+}
+.values-strip svg {
+  color: var(--accent);
+  font-size: 23px;
+  margin-bottom: 11px;
+}
+.values-strip h3 {
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.values-strip p {
+  font-size: 9px;
+  color: var(--muted);
+  margin: 0;
+}
+.philosophy-section {
+  background: #edf0e7;
+  text-align: center;
+  padding: 60px 0;
+}
+.philosophy-section h2 {
+  color: var(--blue);
+  margin: 16px 0;
+}
+.philosophy-section p {
+  max-width: 740px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 13px;
+}
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.about-values svg {
+  color: var(--accent);
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+.about-values h3 {
+  font-size: 28px;
+  color: var(--blue);
+}
+.about-values p {
+  font-size: 13px;
+  color: var(--muted);
+}
+.legal-page {
+  max-width: 850px;
+  padding-block: 55px;
+}
+.legal-page h2 {
+  font-size: 29px;
+  color: var(--blue);
+  margin-top: 30px;
+}
+.legal-page p {
+  color: var(--muted);
+}
+@media (max-width: 1100px) {
+  .story-section {
+    gap: 40px;
+  }
+  .collection-image {
+    aspect-ratio: 1;
+  }
+}
+@media (max-width: 800px) {
+  .collection-grid {
+    gap: 25px 17px;
+  }
+  .collection-caption h3 {
+    font-size: 23px;
+  }
+  .collection-card > p {
+    font-size: 10px;
+  }
+  .story-copy h2 {
+    font-size: 34px;
+  }
+  .story-section {
+    gap: 30px;
+  }
+  .values-strip h3 {
+    font-size: 9px;
+  }
+  .values-strip p {
+    font-size: 8px;
+  }
+}
+@media (max-width: 600px) {
+  .brand-thought {
+    padding: 25px 20px;
+  }
+  .brand-thought > p {
+    font-size: 22px;
+    max-width: 360px;
+    margin: 0 auto 13px;
+  }
+  .brand-thought > p em {
+    display: block;
+  }
+  .brand-thought > .eyebrow {
+    font-size: 7px;
+    letter-spacing: 1.1px;
+  }
+  .collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 14px;
+  }
+  .collection-image {
+    aspect-ratio: 1;
+  }
+  .collection-caption {
+    margin-top: 10px;
+  }
+  .collection-caption h3 {
+    font-size: 23px;
+  }
+  .collection-caption > svg {
+    font-size: 15px;
+  }
+  .collection-card > p {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+  .story-section {
+    grid-template-columns: 1fr;
+    padding-block: 44px;
+    gap: 28px;
+  }
+  .story-image {
+    aspect-ratio: auto;
+  }
+  .story-copy {
+    max-width: none;
+  }
+  .story-copy h2 {
+    font-size: 36px;
+  }
+  .values-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 0;
+    padding-block: 30px;
+  }
+  .values-strip > div:nth-child(3) {
+    border: 0;
+  }
+  .values-strip h3 {
+    font-size: 10px;
+  }
+  .values-strip p {
+    font-size: 9px;
+  }
+  .about-values {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .philosophy-section {
+    padding: 40px 0;
+  }
+}
+/* Preserve the natural proportions of the supplied campaign photography. */
+.collection-image {
+  border: 1px solid var(--line);
+}
+.collection-card:hover .collection-image {
+  border-color: var(--accent);
+}
+.collection-image img {
+  object-fit: contain;
+  object-position: center;
+}
+.story-image img {
+  width: 100%;
+  height: auto;
+  transform: none;
+  object-fit: contain;
+}

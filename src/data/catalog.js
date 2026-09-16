@@ -1,0 +1,176 @@
+﻿const assets = import.meta.glob('../assets/**/*.png', { eager: true, import: 'default' })
+const asset = (folder, name) => assets[`../assets/${folder}/${name}.png`]
+export const money = (value) =>
+  new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+    maximumFractionDigits: 0,
+  }).format(value)
+export const slides = [
+  {
+    image: asset('images', 'carousel1'),
+    width: 1672,
+    height: 941,
+    eyebrow: 'THE HERITAGE EDIT',
+    title: 'Timeless beauty.',
+    accent: 'Yours, always.',
+    description:
+      'A little tradition. A little you. Discover jewellery that turns your everyday moments into beautiful memories.',
+    label: 'Traditional gold-tone jhumka earrings with pearl details',
+  },
+  {
+    image: asset('images', 'carousel2'),
+    width: 1672,
+    height: 941,
+    eyebrow: 'A CELEBRATION OF YOU',
+    title: 'Elegance in',
+    accent: 'every detail.',
+    description:
+      'From quiet celebrations to your grandest occasions, find a piece that feels unmistakably yours.',
+    label: 'Traditional necklace with rectangular green stones and pearl details',
+  },
+  {
+    image: asset('images', 'carousel3'),
+    width: 1774,
+    height: 887,
+    eyebrow: 'FOR ALL YOUR FOREVERS',
+    title: 'Small treasures.',
+    accent: 'Endless meaning.',
+    description:
+      'For promises made, milestones celebrated, and the moments you will keep close forever.',
+    label: 'Delicate gold-tone rings with sparkling stone details',
+  },
+]
+export const products = [
+  [
+    'p1',
+    'Gulabi Drop Earrings',
+    'Earrings',
+    'redstoneEaring',
+    12999,
+    'A graceful pair of drop earrings with ruby-coloured accents, made for festive evenings.',
+  ],
+  [
+    'p2',
+    'Meher Heritage Necklace',
+    'Necklaces',
+    'necklace',
+    34999,
+    'An intricate statement necklace that brings traditional Indian motifs to occasion dressing.',
+  ],
+  [
+    'p3',
+    'Neelam Solitaire Ring',
+    'Rings',
+    'bluestoneRing',
+    8999,
+    'A deep blue centre stone framed by delicate sparkle. An elegant finishing touch.',
+  ],
+  [
+    'p4',
+    'Swarna Classic Bangles',
+    'Bangles',
+    'goldbangel',
+    21999,
+    'Warm gold tones and ornate details create a pair with timeless appeal.',
+  ],
+  [
+    'p5',
+    'Noor Floral Ring',
+    'Rings',
+    'ring1',
+    7499,
+    'A delicate ring inspired by the beauty of blossoms and little everyday celebrations.',
+  ],
+  [
+    'p6',
+    'Tara Drop Earrings',
+    'Earrings',
+    'earing1',
+    9999,
+    'Beautifully balanced drops that catch the light with every movement.',
+  ],
+  [
+    'p7',
+    'Zoya Grace Bracelet',
+    'Bracelets',
+    'bracelet',
+    11499,
+    'A refined bracelet that layers beautifully or makes a quiet statement on its own.',
+  ],
+  [
+    'p8',
+    'Panna Royal Necklace',
+    'Necklaces',
+    'greenstonenecklace',
+    42999,
+    'Rich green accents and a regal silhouette for your most memorable occasions.',
+  ],
+  [
+    'p9',
+    'Kamal Ornate Bangle',
+    'Bangles',
+    'bangle',
+    18499,
+    'An intricate bangle with sculptural details inspired by Indian ornamentation.',
+  ],
+].map(([id, name, category, file, price, description]) => ({
+  id,
+  name,
+  category,
+  image: asset('products', file),
+  price,
+  description,
+}))
+export const collections = [
+  [
+    'c1',
+    'Necklaces',
+    'collectionNecklace',
+    'A little grandeur, close to your heart.',
+    24999,
+    'Rajwada Heritage Necklace',
+  ],
+  [
+    'c2',
+    'Earrings',
+    'CollectionEaring',
+    'Beautiful from every angle.',
+    8999,
+    'Chandni Festive Earrings',
+  ],
+  [
+    'c3',
+    'Gold Kadas',
+    'gold kada',
+    'Tradition, wrapped around you.',
+    19999,
+    'Swarna Traditional Kada',
+  ],
+  [
+    'c4',
+    'Maang Tikkas',
+    'maang',
+    'The crowning touch to your celebration.',
+    6499,
+    'Noor Bridal Maang Tikka',
+  ],
+  ['c5', 'Payals', 'payal', 'A little melody in every step.', 4999, 'Runa Traditional Payal'],
+  [
+    'c6',
+    'Kamarbands',
+    'kamanrband',
+    'An exquisite finishing touch.',
+    15999,
+    'Rang Mahal Kamarband',
+  ],
+].map(([id, name, file, description, price, productName]) => ({
+  id,
+  name,
+  category: name,
+  image: asset('collections', file),
+  description,
+  price,
+  productName,
+}))
+export const catalog = [...products, ...collections.map((c) => ({ ...c, name: c.productName }))]

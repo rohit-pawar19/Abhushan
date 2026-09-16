@@ -1,0 +1,443 @@
+﻿.announcement {
+  height: 31px;
+  background: var(--blue);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+.announcement span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(15px);
+}
+.nav-shell {
+  height: 91px;
+  max-width: 1440px;
+  width: calc(100% - 112px);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+.brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--blue);
+  font-family: var(--serif);
+  font-size: 27px;
+  letter-spacing: 4px;
+  line-height: 1;
+}
+.brand small {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 6px;
+  letter-spacing: 2.2px;
+  margin-top: 8px;
+  text-align: center;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 33px;
+  align-self: stretch;
+}
+.main-nav > a {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.main-nav > a::after {
+  content: '';
+  position: absolute;
+  bottom: 25px;
+  height: 1px;
+  left: 0;
+  right: 100%;
+  background: var(--green);
+  transition: right 0.25s;
+}
+.main-nav > a.active {
+  color: var(--green);
+}
+.main-nav > a:hover::after,
+.main-nav > a.active::after {
+  right: 0;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.nav-separator {
+  height: 20px;
+  width: 1px;
+  background: var(--line);
+}
+.account-button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 0;
+  background: none;
+  font-size: 11px;
+  white-space: nowrap;
+  color: var(--blue);
+}
+.account-button svg {
+  font-size: 18px;
+}
+.signup-link {
+  font-size: 10px;
+  border: 1px solid var(--line);
+  padding: 9px 14px;
+  border-radius: 2px;
+  white-space: nowrap;
+  color: var(--green);
+}
+.signup-link:hover {
+  background: var(--green);
+  color: #fff;
+}
+.cart-link {
+  position: relative;
+}
+.cart-count {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  background: var(--green);
+  border-radius: 50%;
+  min-width: 16px;
+  height: 16px;
+  color: #fff;
+  font-size: 9px;
+  display: grid;
+  place-items: center;
+  padding-inline: 3px;
+}
+.menu-toggle,
+.mobile-account {
+  display: none;
+}
+.site-footer {
+  background: #062b2b;
+  color: #b8c8be;
+  padding: 52px 0 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 0.9fr 1.1fr;
+  gap: 55px;
+}
+.site-footer .brand {
+  color: var(--blue);
+  font-size: 26px;
+}
+.footer-brand > p {
+  font-size: 11px;
+  color: #b8c8be;
+  line-height: 1.9;
+  margin-top: 22px;
+}
+.socials {
+  display: flex;
+  gap: 9px;
+}
+.socials > button {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: #b8c8be;
+  display: grid;
+  place-items: center;
+}
+.footer-grid > div > h3 {
+  font-family: inherit;
+  font-size: 11px;
+  margin: 6px 0 20px;
+  color: #b8c8be;
+  font-weight: 500;
+}
+.footer-grid > div > a:not(.footer-contact) {
+  display: block;
+  font-size: 10px;
+  margin-bottom: 11px;
+  color: #b8c8be;
+}
+.footer-grid > div > a:hover {
+  color: #b8c8be;
+}
+.footer-note > .eyebrow {
+  font-size: 8px;
+  color: #bcaa81;
+  letter-spacing: 1.5px;
+}
+.footer-note > h3 {
+  font-family: var(--serif) !important;
+  font-size: 28px !important;
+  margin: 9px 0 !important;
+  line-height: 1.12;
+}
+.footer-note > p {
+  font-size: 10px;
+  color: #b8c8be;
+}
+.footer-contact {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+  max-width: 230px;
+  font-size: 11px;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+  padding: 20px 0;
+  font-size: 8px;
+  color: #b8c8be;
+}
+@media (max-width: 1100px) {
+  .nav-shell {
+    width: calc(100% - 64px);
+    gap: 20px;
+  }
+  .main-nav {
+    gap: 22px;
+  }
+  .nav-actions {
+    gap: 9px;
+  }
+  .brand {
+    font-size: 24px;
+  }
+  .footer-grid {
+    gap: 30px;
+  }
+  .signup-link {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .nav-shell {
+    height: 77px;
+  }
+  .main-nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 77px;
+    background: var(--surface);
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 15px 20px #00236640;
+    align-items: stretch;
+  }
+  .main-nav.open {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .main-nav > a {
+    padding: 13px 0;
+  }
+  .main-nav > a::after {
+    bottom: 6px;
+  }
+  .mobile-account {
+    display: flex;
+    gap: 26px;
+    border-top: 1px solid var(--line);
+    padding-top: 15px;
+    margin-top: 7px;
+  }
+  .mobile-account a {
+    font-size: 12px;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .account-button span {
+    display: none;
+  }
+  .nav-separator {
+    display: none;
+  }
+  .footer-grid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 35px;
+  }
+}
+@media (max-width: 600px) {
+  .announcement {
+    font-size: 8px;
+    height: 28px;
+    letter-spacing: 0.5px;
+  }
+  .announcement span {
+    display: none;
+  }
+  .nav-shell {
+    height: 70px;
+    width: calc(100% - 36px);
+    gap: 10px;
+  }
+  .brand {
+    font-size: 21px;
+    gap: 8px;
+    letter-spacing: 3px;
+  }
+  .brand small {
+    font-size: 5px;
+    letter-spacing: 1.5px;
+  }
+  .nav-actions {
+    gap: 2px;
+  }
+  .nav-actions > .icon-button:first-child {
+    display: none;
+  }
+  .icon-button {
+    min-width: 34px;
+    font-size: 19px;
+  }
+  .main-nav {
+    top: 70px;
+    padding: 15px 23px;
+  }
+  .account-button {
+    padding: 10px;
+  }
+  .site-footer {
+    padding-top: 37px;
+  }
+  .footer-grid {
+    gap: 30px 24px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-brand {
+    grid-column: 1/-1;
+  }
+  .footer-note {
+    grid-column: 1/-1;
+  }
+  .footer-bottom {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+    font-size: 8px;
+  }
+  .footer-bottom > span:nth-child(2) {
+    display: none;
+  }
+}
+@media (min-width: 801px) and (max-width: 1100px) {
+  .signup-link {
+    display: block;
+    padding-inline: 9px;
+  }
+  .nav-shell {
+    gap: 13px;
+  }
+  .main-nav {
+    gap: 18px;
+  }
+  .nav-actions {
+    gap: 5px;
+  }
+}
+.brand-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+.nav-shell {
+  height: 104px;
+}
+.site-header {
+  background: var(--blue);
+  color: #fff;
+  border-bottom-color: var(--blue);
+}
+.site-header .icon-button,
+.site-header .account-button,
+.site-header .signup-link {
+  color: #fff;
+}
+.site-header .signup-link {
+  border-color: #ffffff80;
+}
+.site-header .nav-separator {
+  background: #ffffff80;
+}
+.site-header .main-nav > a.active {
+  color: #fff;
+}
+@media (max-width: 800px) {
+  .site-header .main-nav {
+    color: var(--blue);
+  }
+  .site-header .main-nav > a.active {
+    color: var(--green);
+  }
+}
+.site-footer .brand-logo {
+  width: 130px;
+  height: 130px;
+}
+.main-nav > a.active {
+  color: var(--green);
+}
+.main-nav > a::after {
+  background: var(--accent);
+}
+@media (max-width: 800px) {
+  .nav-shell {
+    height: 88px;
+  }
+  .brand-logo {
+    width: 78px;
+    height: 78px;
+  }
+  .main-nav {
+    top: 88px;
+  }
+}
+@media (max-width: 600px) {
+  .nav-shell {
+    height: 80px;
+  }
+  .brand-logo {
+    width: 70px;
+    height: 70px;
+  }
+  .main-nav {
+    top: 80px;
+  }
+}

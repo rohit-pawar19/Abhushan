@@ -1,0 +1,112 @@
+﻿.product-detail-page {
+  padding-block: 25px 65px;
+}
+.product-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 30px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.product-breadcrumbs a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+.product-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 65px;
+  align-items: start;
+  margin-bottom: 35px;
+}
+.product-detail-image {
+  background: #f2eee5;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+.product-detail-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.product-detail-copy {
+  padding-top: 20px;
+}
+.product-detail-copy h1 {
+  margin: 15px 0 20px;
+  font-size: clamp(36px, 3.5vw, 54px);
+}
+.product-detail-copy > p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.product-detail-copy > .detail-price {
+  font-size: 25px;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.product-detail-copy > .button {
+  width: 100%;
+  margin: 15px 0 20px;
+  min-height: 54px;
+}
+.product-detail-notes {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid var(--line);
+}
+.product-detail-notes h2 {
+  font-size: 28px;
+}
+.product-detail-notes dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12px;
+}
+.product-detail-notes dt {
+  font-weight: 400;
+  color: var(--muted);
+}
+.product-detail-notes p,
+.product-detail-copy details p {
+  color: var(--muted);
+  font-size: 12px;
+}
+.product-detail-copy details {
+  border-top: 1px solid var(--line);
+  padding: 17px 0;
+}
+.product-detail-copy summary {
+  cursor: pointer;
+  font-size: 13px;
+}
+.product-detail-copy details p {
+  margin: 15px 0 0;
+}
+.related-products {
+  padding-top: 55px;
+}
+.related-products h2 {
+  margin: 10px 0 30px;
+}
+@media (max-width: 800px) {
+  .product-detail {
+    gap: 30px;
+  }
+}
+@media (max-width: 600px) {
+  .product-detail {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .product-detail-copy {
+    padding-top: 0;
+  }
+  .product-breadcrumbs {
+    gap: 7px;
+    font-size: 10px;
+  }
+}
